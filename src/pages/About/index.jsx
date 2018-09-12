@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Main } from 'storybook-project/dist/';
+import { Navigation, Main, Menu } from 'storybook-project/dist/';
 import BeerFooter from '../../components/BeerFooter';
 import BeerHeader from '../../components/BeerHeader';
 import BeerNavigation from '../../components/BeerNavigation';
@@ -11,15 +11,15 @@ import { connect } from 'react-redux';
 // import './index.css';
 import styles from './index.css';
 
-export default class NotFound extends React.Component {
+export default class About extends React.Component {
   render() {
     const favoritesCount = '';
     const cartCount = '';
-    const about = 'not found page';
+    const about = 'about us';
     return (
       <div className={styles.main}>
         <BeerHeader />
-        <BeerNavigation active="0" />
+        <BeerNavigation active="3" />
         <div className={styles.body}>
           <div className={styles.content}>
             <Main>{about}</Main>
@@ -33,3 +33,4 @@ export default class NotFound extends React.Component {
     );
   }
 }
+

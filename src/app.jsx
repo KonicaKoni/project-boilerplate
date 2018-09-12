@@ -23,5 +23,3 @@ ReactDOM.render(
   , document.getElementById('app'),
 );
 
-
-console.log('Ready to roll!');
