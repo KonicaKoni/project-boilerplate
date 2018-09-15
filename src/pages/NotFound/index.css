@@ -1,0 +1,34 @@
+.main {
+    width: 80%;  
+    margin: auto;
+}
+
+.body {
+    width: 100%;  display: flex;
+}
+
+.content {
+    width: 81%;  
+    
+}
+
+.home{
+    margin: 15px 10%;
+    font-family: 'Simpson';
+    
+}
+.menu a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    display: block;
+}
+
+.customHome {
+    padding: 30px;
+    border: 1px solid greenyellow;
+}
+
+.menu {
+    width: 19%;  margin: 10px 0px 10px 0px;
+}
