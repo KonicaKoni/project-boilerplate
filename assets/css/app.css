@@ -1,15 +1,12 @@
-@font-face {
-  font-family: 'Simpson';
-  src: url('../media/fonts/Simpsonfont.ttf')
-}
+
 body {
   margin: 15px;
-  font-family: 'Simpson';
+  font-family: 'Arial';
 }
 input[type=button]{
-  font-family: 'Simpson'
+  font-family: 'Arial'
 }
 
 .test{
-  font-family: 'Simpson';
+  font-family: 'Arial';
 }
