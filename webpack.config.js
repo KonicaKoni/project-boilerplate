@@ -1,57 +1,86 @@
-const glob = require('glob');
+/* eslint-disable */
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const extractPlugin = new ExtractTextPlugin({
+  filename: './assets/css/app.css'
+});
+
+const destinationFolder = 'dist';
 
 module.exports = {
   entry: {
-    button: glob.sync(`${__dirname}/components/index.js`),
+    app: './src/app.jsx',
   },
   output: {
-    path: `${__dirname}/dist`,
-    filename: 'index.js',
-    library: 'components',
-    libraryTarget: 'umd',
+    filename: 'main.js',
+    publicPath: '/',
+    path: path.resolve(__dirname, destinationFolder),
   },
+  context: path.resolve(__dirname, "."),
+  devServer: {
+    contentBase: [path.resolve(__dirname, "./assets/media"), path.resolve(__dirname, destinationFolder)],
+    compress: true,
+    port: 12000,
+    historyApiFallback: true,
+    publicPath: '/',
+    hot: true,
+    stats: 'errors-only',
+    open: true
+  },
+  devtool: 'inline-eval-cheap-source-map',//'inline-source-map', // Development only
+  plugins: [
+    new CleanWebpackPlugin([destinationFolder]),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
+    extractPlugin,
+    new webpack.HotModuleReplacementPlugin()
+  ],
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx', 'es6'] // all these files will be considered as modules
   },
   module: {
-    loaders: [
+    rules: [
       {
-        rules: [{
-          test: /\.js$/,
-          loaders: ['babel-loader'],
-        }],
+        test: /\.js|\.jsx$/,
+        include: [/src/, /assets/],
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader',
+        test: /\.html$/,
+        use: ['html-loader']
       },
       {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]',
-        },
+        include: [/src/, /assets/],
+        loaders: [
+          'style-loader',
+          'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]&relativeUrls=false'
+        ],
+        test: /\.css$/
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(jpg|png|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',
-            options: { name: '[sha512:hash:base64:7].[ext]' },
-          },
-        ],
+            options: {
+              name: '[name].[ext]',
+              outputPath: './assets/media/',
+              publicPath: './assets/media/'
+            }
+          }
+        ]
       },
-    ],
-  },
-  externals: [
-    'prop-types',
-    'react',
-    'react-dom',
-  ],
-  plugins: [
-    new UglifyJsPlugin({ minimize: true }),
-  ],
-};
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ['file-loader']
+      }
+    ]
+  }
+}
