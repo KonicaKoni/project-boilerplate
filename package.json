@@ -9,7 +9,7 @@
     "watch": "webpack --watch -d",
     "dev": "webpack-dev-server"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/KonicaKoni/project-boilerplate.git"
   },
@@ -44,7 +44,7 @@
   "dependencies": {
     "autobind-decorator": "^2.1.0",
     "babel-polyfill": "^6.26.0",
-    "jshint": "^2.9.5",
+    "jshint": "^2.9.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^4.0.0",
