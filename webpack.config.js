@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const extractPlugin = new ExtractTextPlugin({
   filename: './assets/css/app.css'
-}); 
+});
 
 const destinationFolder = 'dist';
 
