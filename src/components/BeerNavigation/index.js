@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Navigation } from 'storybook-project/dist';
 import PropTypes from 'prop-types';
 
 export default class BeerNavigation extends React.Component {
