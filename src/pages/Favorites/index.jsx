@@ -100,12 +100,12 @@ class Favorites extends React.Component {
           <div className={styles.menu}>
           {<Button text="Dodaj testni favorit!" onClick={this.tempaddCart} />}
             <BeerMenu favoritesCount={favoritesCount} cartCount={cartCount} />
-            <BeerFooter />
+            
             <div className={styles.popup}>
               {popup}
             </div>
           </div>
-        </div>
+        </div><BeerFooter />
       </div>
     );
   }

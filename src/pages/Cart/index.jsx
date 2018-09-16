@@ -87,9 +87,9 @@ class Cart extends React.Component {
           <div className={styles.menu}>
           <Button text="Dodaj testni proizvod!" onClick={this.tempaddCart} />
             <BeerMenu favoritesCount={favoritesCount} cartCount={cartCount} />
-            <BeerFooter />
+            
           </div>
-        </div>
+        </div><BeerFooter />
       </div>
     );
   }

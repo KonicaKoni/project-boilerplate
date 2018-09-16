@@ -27,9 +27,9 @@ export default class About extends React.Component {
           </div>
           <div className={styles.menu}>
             <BeerMenu favoritesCount={favoritesCount} cartCount={cartCount} />
-            <BeerFooter />
+            
           </div>
-        </div>
+        </div><BeerFooter />
       </div>
     );
   }
