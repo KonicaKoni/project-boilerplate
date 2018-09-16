@@ -9,14 +9,14 @@ export default class BeerMenu extends React.Component {
             <Menu links={
                 [{
                   id: 1,
-                  content: 'Najdraže pive',
+                  content: 'Vaši favoriti',
                   href: '/Favorites',
                   active: this.props.active == 1,
                   number: this.props.favoritesCount,
                 },
                 {
                   id: 2,
-                  content: 'Plati pa idemo',
+                  content: 'Košarica',
                   href: '/Cart',
                   number: this.props.cartCount,
                   active: this.props.active == 2,
@@ -24,7 +24,7 @@ export default class BeerMenu extends React.Component {
                 {
                   id: 3,
                   content: 'Source code',
-                  href: 'https://github.com/zvonimirszs/project-boilerplate',
+                  href: 'https://github.com/KonicaKoni/storybook-boilerplate',
                   active: this.props.active == 3,
                 },
               ]}

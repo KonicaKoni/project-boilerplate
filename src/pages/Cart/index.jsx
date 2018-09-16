@@ -47,7 +47,7 @@ class Cart extends React.Component {
 
   tempaddCart(event) {
     const objCard3 = {
-      id: 1,
+      id: 2,
       type: 'CART',
     };
     console.log(objCard3);
@@ -78,13 +78,14 @@ class Cart extends React.Component {
     return (
       <div className={styles.main}>
         <BeerHeader />
-        <Button text="Press me!" onClick={this.tempaddCart} />
         <BeerNavigation active="0" />
         <div className={styles.body}>
           <div className={styles.content}>
             <Main>{carts}</Main>
           </div>
+          
           <div className={styles.menu}>
+          <Button text="Dodaj testni proizvod!" onClick={this.tempaddCart} />
             <BeerMenu favoritesCount={favoritesCount} cartCount={cartCount} />
             <BeerFooter />
           </div>

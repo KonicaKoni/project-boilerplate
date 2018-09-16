@@ -51,7 +51,7 @@ class Favorites extends React.Component {
 
   tempaddCart(event) {
     const objCard3 = {
-      id: 1,
+      id: 2,
       type: 'FAVORITES',
     };
     this.props.setCardEvents(objCard3);
@@ -90,14 +90,16 @@ class Favorites extends React.Component {
     return (
       <div className={styles.main}>
         <BeerHeader />
-        {/* <Button text="Press me!" onClick={this.tempaddCart} /> */}
+        
         <BeerNavigation active="0" />
         <div className={styles.body}>
           <div className={styles.content}>
             <Main>{cards}</Main>
           </div>
+          
           <div className={styles.menu}>
-            <BeerMenu favoritesCount={favoritesCount} cartCount={cartCount} active="1" />
+          {<Button text="Dodaj testni favorit!" onClick={this.tempaddCart} />}
+            <BeerMenu favoritesCount={favoritesCount} cartCount={cartCount} />
             <BeerFooter />
             <div className={styles.popup}>
               {popup}

@@ -11,11 +11,6 @@ export default class BeerNavigation extends React.Component {
         active: this.props.active == 1,
       },
       {
-        id: 2,
-        content: <a href="/Home">Cuganje</a>,
-        active: this.props.active == 2,
-      },
-      {
         id: 5,
         content: <a href="/About/">O nama</a>,
         active: this.props.active == 3,
