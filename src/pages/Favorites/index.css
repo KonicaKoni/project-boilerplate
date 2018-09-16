@@ -30,6 +30,6 @@
 }
 
 .menu {
-    width: 19%;  margin: 10px 0px 10px 0px;
+    width: 19%;  margin: 10px 0px 10px 0px;     min-height: 190px;
 }
 

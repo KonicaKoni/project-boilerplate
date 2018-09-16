@@ -8,7 +8,7 @@ export default class BeerHeader extends React.Component {
               <Header
                 imgUrl="/icons/url.png"
                 class=""
-                text="Beer shop"
+                text="Trgovina piva"
               />
             );
     return div;
