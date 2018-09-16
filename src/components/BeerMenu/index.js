@@ -23,7 +23,7 @@ export default class BeerMenu extends React.Component {
                 },
                 {
                   id: 3,
-                  content: 'Source code',
+                  content: 'GitHub kod',
                   href: 'https://github.com/KonicaKoni/storybook-boilerplate',
                   active: this.props.active == 3,
                 },
