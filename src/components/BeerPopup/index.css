@@ -1,0 +1,33 @@
+.popupImage
+{
+    margin-left: 2em;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 0em;
+}
+
+.popupParagraph
+{
+    float: right;
+    max-width: 80%;
+}
+
+.clear_float
+{
+    clear: both;
+}
+
+.popupButtonConteiner
+{
+    margin: auto;
+    text-align: center;
+}
+
+.popupButton{
+    margin: 10px;
+}
+
+.popup{
+    width: 600px;
+}
